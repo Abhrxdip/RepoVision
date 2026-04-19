@@ -5,3 +5,5 @@ dist
 
 # Keep the compiled GitHub Action script so PRGPT can run on GitHub
 !PRGPT/dist
+.vercel
+.env*.local
