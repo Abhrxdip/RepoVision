@@ -1,0 +1,58 @@
+{
+  "name": "codebasegpt",
+  "displayName": "CodebaseGPT",
+  "description": "AI Codebase Indexing and Chat for VS Code",
+  "version": "1.0.0",
+  "publisher": "codebasegpt",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Machine Learning"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "innofusion.indexWorkspace",
+        "title": "RepoVision: Index Current Workspace",
+        "category": "RepoVision"
+      },
+      {
+        "command": "repovision.openChat",
+        "title": "RepoVision: Open AI Chat",
+        "category": "RepoVision"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "innofusion-explorer",
+          "title": "RepoVision",
+          "icon": "media/icon.base64"
+        }
+      ]
+    },
+    "views": {
+      "innofusion-explorer": [
+        {
+          "type": "webview",
+          "id": "innofusion.chatView",
+          "name": "AI Chat"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "@types/node": "^18.x.x",
+    "typescript": "^4.9.5"
+  }
+}
